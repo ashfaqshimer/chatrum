@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<script src="https://kit.fontawesome.com/b11a7ff4b2.js"></script>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="icon" href="favicon.png" type="image/png" />
+		<title>ChatRum | Real-Time Chatoom</title>
+	</head>
+	<body>
+		<!-- Title and background -->
+		<main id="title">
+			<div class="overlay d-flex align-items-center justify-content-center">
+				<div class="container text-center text-light">
+					<h1 class="text-light display-1 "><i class="fas fa-wine-bottle"></i> ChatRum</h1>
+					<p class="lead">Real-Time Chatroom.</p>
+				</div>
+			</div>
+		</main>
+
+		<section id="chatRoom" class="bg-secondary">
+			<div class="container p-3">
+				<!-- Chatroom buttons -->
+				<h3 class="display-4 text-center">Choose a Chatroom:</h3>
+				<hr />
+				<div class="chat-rooms mb-3 text-center p-3">
+					<button class="btn btn-outline-light active" id="general">#general</button>
+					<button class="btn btn-outline-light" id="gaming">#gaming</button>
+					<button class="btn btn-outline-light" id="music">#music</button>
+					<button class="btn btn-outline-light" id="movies">#movies</button>
+				</div>
+				<div class="chat-window">
+					<ul class="chat-list list-group"></ul>
+				</div>
+
+				<!-- Send Message Form -->
+				<form class="new-chat my-3">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<label for="message" class="input-group-text">Your Message:</label>
+						</div>
+						<input type="text" class="form-control" id="message" name="message" required />
+						<div class="input-group-append">
+							<input type="submit" value="Send" class="btn btn-success" />
+						</div>
+					</div>
+				</form>
+
+				<!-- Update name form -->
+				<form class="new-name my-3">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<label for="name" class="input-group-text">Update Name: </label>
+						</div>
+						<input type="text" class="form-control" id="name" name="name" required />
+						<div class="input-group-append">
+							<input type="submit" value="Update" class="btn btn-dark" />
+						</div>
+					</div>
+					<div class="alert my-3 text-center"></div>
+				</form>
+			</div>
+		</section>
+
+		<footer id="main-footer" class="bg-dark text-center py-2">
+			<p class=" text-white">Copyright &copy; 2019, Ashfaq Shimer, All Rights Reserved</p>
+		</footer>
+		<!-- Bootstrap JS -->
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<!-- Date FNS -->
+		<script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+		<!-- Firebase Scripts -->
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-firestore.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+		<script>
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: 'AIzaSyDlNMg6Tu90donEnPaNho2GdGwgBRp24lE',
+				authDomain: 'netninja-modern-javascript.firebaseapp.com',
+				databaseURL: 'https://netninja-modern-javascript.firebaseio.com',
+				projectId: 'netninja-modern-javascript',
+				storageBucket: 'netninja-modern-javascript.appspot.com',
+				messagingSenderId: '232440943816',
+				appId: '1:232440943816:web:b6a23556c6695a45'
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			const db = firebase.firestore();
+		</script>
+		<!-- Main Scripts -->
+		<script type="text/javascript" src="./scripts/chat.js"></script>
+		<script type="text/javascript" src="./scripts/ui.js"></script>
+		<script type="text/javascript" src="./scripts/app.js"></script>
+	</body>
+</html>
