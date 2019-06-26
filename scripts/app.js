@@ -21,18 +21,15 @@ newChat.addEventListener('submit', event => {
 
 // Change room
 rooms.addEventListener('click', event => {
-	console.log(event);
 	if ((event.target.tagName = 'BUTTON')) {
 		chatUI.clearChat();
 		const currentRoom = document.querySelector('.active');
-		console.log(currentRoom);
 		currentRoom.classList.remove('active');
 		chatroom.updateRoom(event.target.getAttribute('id'));
 		event.target.classList.add('active');
 		chatroom.getChats(chat => {
 			chatUI.render(chat);
 		});
-		console.log('Room is updated');
 	}
 });
 
